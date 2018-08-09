@@ -1,0 +1,22 @@
+name: jppm-android-plugin
+version: 1.0.0
+description: Plugin for development for android
+type: plugin
+
+plugin:
+  list:
+    - AndroidPlugin
+  sources:
+    - src
+config:
+  ignore:
+    - /sandbox/**
+    - /.idea/**
+    - /*.iml
+    - /.git/**
+    - /examples/**
+    - /package.hub.yml
+
+deps:
+  jphp-compress-ext: '*'
+  jphp-runtime: '*'

@@ -1,0 +1,9 @@
+name: 'jphp-android-ext'
+version: '1.0.0'
+
+plugins:
+  - 'Gradle'
+
+deps:
+  jphp-runtime: '*'
+  jphp-xml-ext: '*'
