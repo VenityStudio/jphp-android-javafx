@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.paint.Color;
 import javafx.util.Callback;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.control.ListViewEx;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
@@ -23,7 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-@Reflection.Name(JavaFXExtension.NS + "UXListView")
+@Reflection.Name("UXListView")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXListView extends UXControl<ListView> {
     interface WrappedInterface {
         @Property boolean editable();

@@ -3,6 +3,7 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.TreeItem;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
 import php.runtime.annotation.Reflection;
@@ -13,7 +14,8 @@ import php.runtime.env.Environment;
 import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXTreeItem")
+@Reflection.Name("UXTreeItem")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXTreeItem extends BaseWrapper<TreeItem> {
     interface WrappedInterface {
         @Property boolean expanded();
@@ -47,7 +49,7 @@ public class UXTreeItem extends BaseWrapper<TreeItem> {
     public void update() {
         Object value = getWrappedObject().getValue();
 
-        getWrappedObject().setValue(null);
+        getWrappedObject().setValue(null); // WTF :D
         getWrappedObject().setValue(value);
     }
 }

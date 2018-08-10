@@ -5,6 +5,7 @@ import javafx.scene.control.OverrunStyle;
 import javafx.scene.control.Tooltip;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.text.UXFont;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
@@ -15,7 +16,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "UXTooltip")
+@Name("UXTooltip")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXTooltip<T extends Tooltip> extends UXPopupWindow<Tooltip> {
     interface WrappedInterface {
         @Property Node graphic();

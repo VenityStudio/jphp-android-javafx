@@ -6,7 +6,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextInputDialog;
 import javafx.stage.Window;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Nullable;
 import php.runtime.annotation.Reflection.Signature;
@@ -16,7 +18,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.Optional;
 
-@Name(JavaFXExtension.NS + "UXDialog")
+@Name("UXDialog")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXDialog extends BaseObject {
     public UXDialog(Environment env, ClassEntity clazz) {
         super(env, clazz);

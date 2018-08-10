@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.scene.Node;
 import javafx.stage.Stage;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.control.DraggableTab;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
@@ -9,7 +10,8 @@ import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXDraggableTab")
+@Reflection.Name("UXDraggableTab")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXDraggableTab extends UXTab {
     interface WrappedInterface {
         @Property boolean disableDragFirst();

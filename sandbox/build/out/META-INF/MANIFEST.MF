@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Created-By: jppm (JPHP Packager 0.3.8)
+Main-Class: php.runtime.launcher.Launcher

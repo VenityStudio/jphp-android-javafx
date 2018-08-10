@@ -11,6 +11,7 @@ import javafx.scene.shape.FillRule;
 import javafx.scene.shape.StrokeLineCap;
 import javafx.scene.shape.StrokeLineJoin;
 import javafx.scene.text.Font;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.text.UXFont;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
@@ -20,7 +21,8 @@ import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
 @Abstract
-@Reflection.Name(JavaFXExtension.NS + "UXGraphicsContext")
+@Reflection.Name("UXGraphicsContext")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXGraphicsContext extends BaseWrapper<GraphicsContext> {
     interface WrappedInterface {
         @Property Canvas canvas();

@@ -3,6 +3,7 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.event.Event;
 import javafx.scene.image.Image;
 import javafx.util.Duration;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.EventProvider;
 import org.venity.jphp.ext.android.fx.support.tray.animations.AnimationType;
 import org.venity.jphp.ext.android.fx.support.tray.notification.NotificationLocation;
@@ -19,7 +20,8 @@ import php.runtime.invoke.Invoker;
 import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "UXTrayNotification")
+@Name("UXTrayNotification")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXTrayNotification extends BaseWrapper<TrayNotification> {
     interface WrappedInterface {
         @Property String title();

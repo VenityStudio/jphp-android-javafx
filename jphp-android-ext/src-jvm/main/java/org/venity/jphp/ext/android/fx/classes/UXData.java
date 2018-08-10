@@ -1,7 +1,9 @@
 package org.venity.jphp.ext.android.fx.classes;
 
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import org.venity.jphp.ext.android.fx.classes.data.Data;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
@@ -11,7 +13,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.Map;
 
-@Name(JavaFXExtension.NS + "UXData")
+@Name("UXData")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXData extends UXNode<Data> {
     public UXData(Environment env, Data wrappedObject) {
         super(env, wrappedObject);

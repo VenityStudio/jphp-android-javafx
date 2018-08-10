@@ -3,14 +3,17 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.scene.control.IndexRange;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.text.Font;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.text.UXFont;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
 @Abstract
-@Name(JavaFXExtension.NS + "UXTextInputControl")
+@Name("UXTextInputControl")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXTextInputControl<T extends TextInputControl> extends UXControl {
     interface WrappedInterface {
         @Property int anchor();

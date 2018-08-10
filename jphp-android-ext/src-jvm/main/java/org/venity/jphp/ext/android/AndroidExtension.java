@@ -1,6 +1,7 @@
 package org.venity.jphp.ext.android;
 
 import javafx.animation.*;
+import javafx.application.Application;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -58,18 +59,18 @@ public class AndroidExtension extends Extension {
 
     @Override
     public Status getStatus() {
-        return Status.EXPERIMENTAL;
+        return Status.BETA;
     }
 
     @Override
     public String getName()
     {
-        return "AndroidFX";
+        return "JavaFXPorts and Android";
     }
 
     @Override
     public String getVersion() {
-        return "0.1";
+        return "1.0";
     }
 
     @Override
@@ -90,7 +91,6 @@ public class AndroidExtension extends Extension {
         registerMemoryOperation(CursorMemoryOperation.class);
         registerMemoryOperation(InsetsMemoryOperation.class);
         registerMemoryOperation(DurationMemoryOperation.class);
-        //registerMemoryOperation(ColorMemoryOperation.class);
         registerMemoryOperation(ImageMemoryOperation.class);
         registerMemoryOperation(Rectangle2DMemoryOperation.class);
         registerMemoryOperation(BoundsMemoryOperation.class);
@@ -100,7 +100,7 @@ public class AndroidExtension extends Extension {
 
         registerWrapperClass(scope, ObservableValue.class, UXValue.class);
         registerWrapperClass(scope, ObservableList.class, UXList.class);
-        //registerWrapperClass(scope, Application.class, UXApplication.class);
+        registerWrapperClass(scope, Application.class, UXApplication.class);
         registerWrapperClass(scope, Screen.class, UXScreen.class);
 
         registerWrapperClass(scope, Font.class, UXFont.class);
@@ -114,7 +114,6 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, ContextMenu.class, UXContextMenu.class);
         registerWrapperClass(scope, MenuItem.class, UXMenuItem.class);
         registerWrapperClass(scope, Menu.class, UXMenu.class);
-        // MemoryOperation.registerWrapper(SeparatorMenuItem.class, UXMenuItem.class);
         registerWrapperClass(scope, Scene.class, UXScene.class);
 
         registerWrapperClass(scope, Node.class, UXNode.class);
@@ -202,7 +201,6 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, javafx.scene.shape.Polygon.class, UXPolygon.class);
         registerWrapperClass(scope, Rectangle.class, UXRectangle.class);
 
-        //MemoryOperation.registerWrapper(InputEvent.class, UXEvent.class);
         MemoryOperation.registerWrapper(ActionEvent.class, UXEvent.class);
         MemoryOperation.registerWrapper(InputMethodEvent.class, UXEvent.class);
         MemoryOperation.registerWrapper(TreeView.EditEvent.class, UXEvent.class);
@@ -217,7 +215,6 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, ContextMenuEvent.class, UXContextMenuEvent.class);
         registerWrapperClass(scope, DragEvent.class, UXDragEvent.class);
         registerWrapperClass(scope, WebEvent.class, UXWebEvent.class);
-        //registerWrapperClass(scope, WebErrorEvent.class, UXWebErrorEvent.class);
         registerWrapperClass(scope, ScrollEvent.class, UXScrollEvent.class);
 
         registerWrapperClass(scope, FXMLLoader.class, UXLoader.class);

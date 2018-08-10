@@ -3,8 +3,10 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Abstract;
 import php.runtime.annotation.Reflection.Getter;
 import php.runtime.annotation.Reflection.Name;
@@ -31,7 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Abstract
-@Name(JavaFXExtension.NS + "UXList")
+@Name("UXList")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXList<T> extends BaseWrapper<ObservableList<T>> implements Iterator, Countable, ArrayAccess, ICloneableObject<UXList<T>> {
     private int index = -1;
     private Class<?> unwrapClass = null;

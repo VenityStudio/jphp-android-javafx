@@ -1,12 +1,15 @@
 package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.scene.control.ProgressIndicator;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "UXProgressIndicator")
+@Name("UXProgressIndicator")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXProgressIndicator extends UXControl {
     interface WrappedInterface {
         @Property("progressK") double progress();

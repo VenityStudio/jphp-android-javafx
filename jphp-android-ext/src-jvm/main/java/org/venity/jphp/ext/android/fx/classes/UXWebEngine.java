@@ -9,6 +9,7 @@ import javafx.print.PrinterJob;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebHistory;
 import netscape.javascript.JSObject;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.EventProvider;
 import org.venity.jphp.ext.android.fx.support.JavaFxUtils;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
@@ -25,7 +26,8 @@ import php.runtime.reflection.ClassEntity;
 import java.io.File;
 
 @Abstract
-@Name(JavaFXExtension.NS + "UXWebEngine")
+@Name("UXWebEngine")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXWebEngine extends BaseWrapper<WebEngine> {
     interface WrappedInterface {
         @Property Document document();

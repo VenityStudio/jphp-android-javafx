@@ -5,6 +5,7 @@ import javafx.scene.Node;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Tab;
 import javafx.scene.control.Tooltip;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.EventProvider;
 import org.venity.jphp.ext.android.fx.support.JavaFxUtils;
 import org.venity.jphp.ext.android.fx.support.UserData;
@@ -17,7 +18,8 @@ import php.runtime.invoke.Invoker;
 import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXTab")
+@Reflection.Name("UXTab")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXTab extends BaseWrapper<Tab> {
     interface WrappedInterface {
         @Property boolean closable();

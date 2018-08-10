@@ -3,13 +3,15 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXTableCell")
+@Reflection.Name("UXTableCell")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXTableCell extends UXCell<TableCell> {
     interface WrappedInterface {
         void updateTableView(TableView tv);

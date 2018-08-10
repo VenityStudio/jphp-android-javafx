@@ -8,6 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.text.UXFont;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
@@ -16,7 +17,8 @@ import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
 @Abstract
-@Reflection.Name(JavaFXExtension.NS + "UXLabeled")
+@Reflection.Name("UXLabeled")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXLabeled<T extends Labeled> extends UXControl<Labeled> {
     interface WrappedInterface {
         @Property

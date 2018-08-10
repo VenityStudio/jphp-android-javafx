@@ -3,6 +3,7 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.layout.UXFlowPane;
 import org.venity.jphp.ext.android.fx.classes.text.UXFont;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
@@ -13,7 +14,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXPagination")
+@Reflection.Name("UXPagination")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXPagination extends UXFlowPane<PaginationEx> {
     interface WrappedInterface {
         @Property int total();

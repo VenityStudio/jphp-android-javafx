@@ -4,13 +4,16 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Side;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.control.TabPaneEx;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "UXTabPane")
+@Name("UXTabPane")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXTabPane extends UXControl<TabPane> {
     interface WrappedInterface {
         @Property Side side();

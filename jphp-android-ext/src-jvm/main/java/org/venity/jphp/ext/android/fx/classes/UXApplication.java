@@ -5,8 +5,10 @@ import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Abstract;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Signature;
@@ -29,7 +31,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 @Abstract
-@Name(JavaFXExtension.NS + "UXApplication")
+@Name("UXApplication")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXApplication extends BaseWrapper<Application> {
     private static Invoker onStart;
     private static boolean shutdown = false;
@@ -52,14 +55,6 @@ public class UXApplication extends BaseWrapper<Application> {
         return pid;
     }
 
-    public static String getHostname()
-    {
-        final String jvmName = ManagementFactory.getRuntimeMXBean().getName();
-        final int index = jvmName.indexOf('@');
-
-        return jvmName.substring(index, jvmName.length());
-    }
-
     @Signature
     public static boolean isShutdown() {
         return false; // lol
@@ -73,45 +68,6 @@ public class UXApplication extends BaseWrapper<Application> {
     @Signature
     public static boolean isImplicitExit() {
         return Platform.isImplicitExit();
-    }
-
-    @Signature
-    public static String getMacAddress() {
-        InetAddress ip;
-
-        try {
-            ip = InetAddress.getLocalHost();
-
-            if (ip == null) {
-                return null;
-            }
-
-            NetworkInterface network = NetworkInterface.getByInetAddress(ip);
-
-            if (network == null) {
-                return null;
-            }
-
-            byte[] mac = network.getHardwareAddress();
-
-            if (mac == null) {
-                return null;
-            }
-
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < mac.length; i++) {
-                sb.append(String.format("%02X%s", mac[i], (i < mac.length - 1) ? "-" : ""));
-            }
-
-            return sb.toString();
-        } catch (UnknownHostException e) {
-            return null;
-        } catch (SocketException e){
-            return null;
-        } catch (Exception e) {
-            return null;
-        }
     }
 
     @Signature
@@ -155,7 +111,7 @@ public class UXApplication extends BaseWrapper<Application> {
             return;
         }
 
-        new JFXPanel();
+        new JFXPanel(); // lol WTF!?
 
         Platform.runLater(() -> {
             try {

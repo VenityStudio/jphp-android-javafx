@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
 import php.runtime.annotation.Reflection;
@@ -13,7 +14,8 @@ import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
 @Reflection.Abstract
-@Reflection.Name(JavaFXExtension.NS + "UXValue")
+@Reflection.Name("UXValue")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXValue extends BaseWrapper<ObservableValue> {
     public UXValue(Environment env, ObservableValue wrappedObject) {
         super(env, wrappedObject);

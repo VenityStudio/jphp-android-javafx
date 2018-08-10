@@ -7,7 +7,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TitledPane;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Abstract;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Property;
@@ -18,7 +20,8 @@ import php.runtime.invoke.Invoker;
 import php.runtime.reflection.ClassEntity;
 
 @Abstract
-@Name(JavaFXExtension.NS + "UXParent")
+@Name("UXParent")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXParent<T extends Parent> extends UXNode<Parent> {
     interface WrappedInterface {
         void layout();

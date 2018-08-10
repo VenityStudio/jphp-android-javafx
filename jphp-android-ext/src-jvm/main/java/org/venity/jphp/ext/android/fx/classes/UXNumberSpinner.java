@@ -1,6 +1,7 @@
 package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.geometry.Pos;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.control.NumberSpinner;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
@@ -10,7 +11,8 @@ import php.runtime.annotation.Reflection.Setter;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXNumberSpinner")
+@Reflection.Name("UXNumberSpinner")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXNumberSpinner extends UXSpinner<NumberSpinner> {
     interface WrappedInterface {
         @Property int min();

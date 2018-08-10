@@ -1,14 +1,17 @@
 package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.scene.control.ComboBoxBase;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
 @Abstract
-@Name(JavaFXExtension.NS + "UXComboBoxBase")
+@Name("UXComboBoxBase")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXComboBoxBase<T extends ComboBoxBase> extends UXControl<ComboBoxBase> {
     interface WrappedInterface {
         @Property boolean armed();

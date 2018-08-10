@@ -4,6 +4,7 @@ import javafx.geometry.HPos;
 import javafx.geometry.Orientation;
 import javafx.geometry.VPos;
 import javafx.scene.control.Separator;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Property;
@@ -11,7 +12,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXSeparator")
+@Reflection.Name("UXSeparator")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXSeparator extends UXControl<Separator> {
     interface WrappedInterface {
         @Property Orientation orientation();

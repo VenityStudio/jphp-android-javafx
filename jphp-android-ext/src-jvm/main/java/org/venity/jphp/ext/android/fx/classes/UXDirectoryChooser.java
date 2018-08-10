@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Window;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
 import php.runtime.annotation.Reflection;
@@ -12,7 +13,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.io.File;
 
-@Name(JavaFXExtension.NS + "UXDirectoryChooser")
+@Name("UXDirectoryChooser")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXDirectoryChooser extends BaseWrapper<DirectoryChooser> {
     interface WrappedInterface {
         @Property String title();

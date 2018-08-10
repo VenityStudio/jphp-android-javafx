@@ -1,6 +1,7 @@
 package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.geometry.Point2D;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Abstract;
@@ -10,7 +11,8 @@ import php.runtime.lang.BaseObject;
 import php.runtime.reflection.ClassEntity;
 
 @Abstract
-@Reflection.Name(JavaFXExtension.NS + "UXGeometry")
+@Reflection.Name("UXGeometry")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXGeometry extends BaseObject {
     public UXGeometry(Environment env, ClassEntity clazz) {
         super(env, clazz);

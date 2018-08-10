@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
@@ -16,7 +17,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-@Reflection.Name(JavaFXExtension.NS + "UXDragboard")
+@Reflection.Name("UXDragboard")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXDragboard extends BaseWrapper<Dragboard> {
     interface WrappedInterface {
         @Property @Nullable Image dragView();

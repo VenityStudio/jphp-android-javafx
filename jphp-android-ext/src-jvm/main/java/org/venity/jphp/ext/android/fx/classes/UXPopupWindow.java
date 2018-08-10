@@ -6,12 +6,15 @@ import javafx.scene.Node;
 import javafx.scene.control.PopupControl;
 import javafx.stage.PopupWindow;
 import javafx.stage.Window;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "UXPopupWindow")
+@Name("UXPopupWindow")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXPopupWindow<T extends PopupWindow> extends UXWindow<PopupWindow> {
     interface WrappedInterface {
         @Property boolean autoFix();

@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Signature;
@@ -10,7 +11,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.List;
 
-@Reflection.Name(JavaFXExtension.NS + "UXGroup")
+@Reflection.Name("UXGroup")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXGroup<T extends Group> extends UXParent<Group> {
     interface WrappedInterface {
     }

@@ -17,11 +17,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.EventProvider;
 import org.venity.jphp.ext.android.fx.support.JavaFxUtils;
 import org.venity.jphp.ext.android.fx.support.UserData;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.invoke.Invoker;
@@ -32,7 +34,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 @Abstract
-@Name(JavaFXExtension.NS + "UXWindow")
+@Name("UXWindow")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXWindow<T extends Window> extends BaseWrapper<Window> {
     interface WrappedInterface {
         @Property double x();

@@ -23,12 +23,14 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.effect.UXEffectPipeline;
 import org.venity.jphp.ext.android.fx.classes.support.Eventable;
 import org.venity.jphp.ext.android.fx.support.JavaFxUtils;
 import org.venity.jphp.ext.android.fx.support.UserData;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.CallStackItem;
 import php.runtime.env.Environment;
@@ -48,7 +50,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Abstract
-@Name(JavaFXExtension.NS + "UXNode")
+@Name("UXNode")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXNode<T extends Node> extends BaseWrapper<Node> implements Eventable {
     interface WrappedInterface {
         @Property

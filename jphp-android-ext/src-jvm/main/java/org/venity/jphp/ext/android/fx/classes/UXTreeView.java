@@ -5,6 +5,7 @@ import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
 import php.runtime.annotation.Reflection;
@@ -15,7 +16,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.List;
 
-@Reflection.Name(JavaFXExtension.NS + "UXTreeView")
+@Reflection.Name("UXTreeView")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXTreeView extends UXControl<TreeView> {
     interface WrappedInterface {
         @Property TreeItem root();

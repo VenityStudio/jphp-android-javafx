@@ -7,17 +7,20 @@ import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.input.KeyCombination;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.EventProvider;
 import org.venity.jphp.ext.android.fx.support.UserData;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.invoke.Invoker;
 import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "UXMenuItem")
+@Name("UXMenuItem")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXMenuItem extends BaseWrapper<MenuItem> {
     interface WrappedInterface {
         @Property String id();

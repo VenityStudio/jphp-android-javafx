@@ -4,6 +4,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Window;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
 import php.runtime.annotation.Reflection;
@@ -18,7 +19,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.List;
 
-@Name(JavaFXExtension.NS + "UXScene")
+@Name("UXScene")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXScene extends BaseWrapper<Scene> {
     interface WrappedInterface {
         @Property Parent root();

@@ -2,7 +2,9 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Nullable;
 import php.runtime.annotation.Reflection.Property;
@@ -10,7 +12,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "UXLabel")
+@Name("UXLabel")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXLabel<T extends Label> extends UXLabeled<Label> {
     interface WrappedInterface {
         @Property Node labelFor();

@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.beans.value.ObservableValue;
 import javafx.scene.web.WebHistory;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.JavaFxUtils;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
@@ -14,7 +15,8 @@ import php.runtime.memory.ArrayMemory;
 import php.runtime.reflection.ClassEntity;
 
 @Abstract
-@Reflection.Name(JavaFXExtension.NS + "UXWebHistory")
+@Reflection.Name("UXWebHistory")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXWebHistory extends BaseWrapper<WebHistory> {
     interface WrappedInterface {
         @Property int currentIndex();

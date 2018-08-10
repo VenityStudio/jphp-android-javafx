@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.scene.media.Media;
 import javafx.util.Duration;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Property;
@@ -15,7 +16,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-@Reflection.Name(JavaFXExtension.NS + "UXMedia")
+@Reflection.Name("UXMedia")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXMedia extends BaseWrapper<Media> {
     interface WrappedInterface {
         @Property Duration duration();

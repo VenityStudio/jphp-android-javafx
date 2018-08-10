@@ -5,6 +5,7 @@ import javafx.geometry.Side;
 import javafx.scene.Node;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Nullable;
@@ -13,7 +14,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXMenuButton")
+@Reflection.Name("UXMenuButton")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXMenuButton<T extends MenuButton> extends UXButtonBase<MenuButton> {
     interface WrappedInterface {
         @Property ObservableList<MenuItem> items();

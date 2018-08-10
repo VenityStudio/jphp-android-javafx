@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.layout.UXPanel;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import org.venity.jphp.ext.android.fx.support.control.MediaViewBox;
@@ -14,7 +15,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.io.File;
 
-@Reflection.Name(JavaFXExtension.NS + "UXMediaViewBox")
+@Reflection.Name("UXMediaViewBox")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXMediaViewBox extends UXPanel<MediaViewBox> {
     interface WrappedInterface {
         @Property("player") @Nullable MediaPlayer mediaPlayer();

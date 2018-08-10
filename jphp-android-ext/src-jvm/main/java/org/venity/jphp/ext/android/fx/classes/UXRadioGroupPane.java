@@ -5,6 +5,7 @@ import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.layout.UXVBox;
 import org.venity.jphp.ext.android.fx.classes.text.UXFont;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
@@ -18,7 +19,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.List;
 
-@Name(JavaFXExtension.NS + "UXRadioGroupPane")
+@Name("UXRadioGroupPane")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXRadioGroupPane extends UXVBox<RadioGroupPane> {
     interface WrappedInterface {
         @Property ObservableList items();

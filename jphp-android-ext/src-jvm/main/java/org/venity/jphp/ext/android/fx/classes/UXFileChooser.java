@@ -3,8 +3,10 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.collections.ObservableList;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.lang.BaseWrapper;
@@ -17,7 +19,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Name(JavaFXExtension.NS + "UXFileChooser")
+@Name("UXFileChooser")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXFileChooser extends BaseWrapper<FileChooser> {
     interface WrappedInterface {
         @Property String title();

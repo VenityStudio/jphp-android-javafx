@@ -1,8 +1,10 @@
 package org.venity.jphp.ext.android.fx.classes;
 
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.data.Data;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import org.venity.jphp.ext.android.fx.classes.data.CustomNode;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
@@ -12,7 +14,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.Map;
 
-@Name(JavaFXExtension.NS + "UXCustomNode")
+@Name("UXCustomNode")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXCustomNode extends UXNode<CustomNode> {
     public UXCustomNode(Environment env, CustomNode wrappedObject) {
         super(env, wrappedObject);

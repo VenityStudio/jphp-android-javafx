@@ -3,6 +3,7 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Getter;
@@ -13,7 +14,8 @@ import php.runtime.env.Environment;
 import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXMediaPlayer")
+@Reflection.Name("UXMediaPlayer")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXMediaPlayer extends BaseWrapper<MediaPlayer> {
     interface WrappedInterface {
         @Property double balance();

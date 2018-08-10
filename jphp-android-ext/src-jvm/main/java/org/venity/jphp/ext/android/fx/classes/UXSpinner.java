@@ -3,6 +3,7 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Property;
@@ -11,7 +12,8 @@ import php.runtime.env.Environment;
 import php.runtime.invoke.Invoker;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXSpinner")
+@Reflection.Name("UXSpinner")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXSpinner<T extends Spinner> extends UXControl<Spinner> {
     interface WrappedInterface {
         @Property boolean editable();

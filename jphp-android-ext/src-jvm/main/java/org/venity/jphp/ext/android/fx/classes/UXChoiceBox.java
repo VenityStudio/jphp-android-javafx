@@ -4,6 +4,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.SingleSelectionModel;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Getter;
@@ -13,7 +14,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXChoiceBox")
+@Reflection.Name("UXChoiceBox")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXChoiceBox extends UXControl<ChoiceBox> {
     interface WrappedInterface {
         @Property ObservableList items();

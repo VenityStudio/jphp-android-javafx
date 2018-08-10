@@ -6,7 +6,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableView;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
@@ -14,7 +16,8 @@ import php.runtime.reflection.ClassEntity;
 import javax.swing.table.TableColumn;
 import java.util.List;
 
-@Name(JavaFXExtension.NS + "UXTableView")
+@Name("UXTableView")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXTableView extends UXControl<TableView> {
     interface WrappedInterface {
         @Property boolean editable();

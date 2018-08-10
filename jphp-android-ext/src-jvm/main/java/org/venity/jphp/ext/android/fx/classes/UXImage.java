@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.PixelReader;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
 import php.runtime.annotation.Reflection;
@@ -24,7 +25,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-@Reflection.Name(JavaFXExtension.NS + "UXImage")
+@Reflection.Name("UXImage")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXImage extends BaseWrapper<Image> {
     interface WrappedInterface {
         @Property double width();

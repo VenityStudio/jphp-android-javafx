@@ -3,8 +3,10 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.scene.image.Image;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
@@ -17,7 +19,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-@Name(JavaFXExtension.NS + "UXClipboard")
+@Name("UXClipboard")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXClipboard extends BaseObject {
     private static final Clipboard clipboard = Clipboard.getSystemClipboard();
 

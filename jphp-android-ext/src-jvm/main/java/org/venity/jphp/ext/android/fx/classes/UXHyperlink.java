@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.scene.Node;
 import javafx.scene.control.Hyperlink;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
@@ -10,7 +11,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "UXHyperlink")
+@Name("UXHyperlink")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXHyperlink extends UXButtonBase {
     interface WrappedInterface {
         @Property boolean visited();

@@ -3,6 +3,7 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Nullable;
@@ -13,7 +14,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.io.File;
 
-@Reflection.Name(JavaFXExtension.NS + "UXMediaView")
+@Reflection.Name("UXMediaView")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXMediaView extends UXNode<MediaView> {
     interface WrappedInterface {
         @Property("player") @Nullable MediaPlayer mediaPlayer();

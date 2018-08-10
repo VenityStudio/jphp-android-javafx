@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Abstract;
@@ -13,7 +14,8 @@ import php.runtime.reflection.ClassEntity;
 import java.util.List;
 
 @Abstract
-@Reflection.Name(JavaFXExtension.NS + "UXScreen")
+@Reflection.Name("UXScreen")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXScreen extends BaseWrapper<Screen> {
     interface WrappedInterface {
         @Property double dpi();
@@ -32,6 +34,18 @@ public class UXScreen extends BaseWrapper<Screen> {
     @Reflection.Signature
     public static Screen getPrimary() {
         return Screen.getPrimary();
+    }
+
+    @Reflection.Signature
+    public static double getWidth()
+    {
+        return Screen.getPrimary().getVisualBounds().getWidth();
+    }
+
+    @Reflection.Signature
+    public static double getHeight()
+    {
+        return Screen.getPrimary().getVisualBounds().getHeight();
     }
 
     @Reflection.Signature

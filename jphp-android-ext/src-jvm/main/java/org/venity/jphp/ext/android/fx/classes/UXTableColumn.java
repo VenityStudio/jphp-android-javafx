@@ -8,6 +8,7 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumnBase;
 import javafx.util.Callback;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.JavaFxUtils;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
@@ -20,7 +21,8 @@ import php.runtime.memory.ObjectMemory;
 import php.runtime.reflection.ClassEntity;
 import php.runtime.reflection.support.ReflectionUtils;
 
-@Reflection.Name(JavaFXExtension.NS + "UXTableColumn")
+@Reflection.Name("UXTableColumn")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXTableColumn extends BaseWrapper<TableColumnBase> {
     interface WrappedInterface {
         @Property boolean editable();

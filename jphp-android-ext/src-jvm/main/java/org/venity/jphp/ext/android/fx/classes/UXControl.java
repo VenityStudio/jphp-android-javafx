@@ -3,15 +3,18 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Control;
 import javafx.scene.control.Tooltip;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.layout.UXRegion;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
 @Abstract
-@Name(JavaFXExtension.NS + "UXControl")
+@Name("UXControl")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXControl<T extends Control> extends UXRegion<Control> {
     interface WrappedInterface {
         @Property boolean resizable();

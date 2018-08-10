@@ -2,15 +2,18 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.lang.BaseWrapper;
 import php.runtime.lang.IObject;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "UXToggleGroup")
+@Name("UXToggleGroup")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXToggleGroup extends BaseWrapper<ToggleGroup> {
     interface WrappedInterface {
         @Property Object userData();

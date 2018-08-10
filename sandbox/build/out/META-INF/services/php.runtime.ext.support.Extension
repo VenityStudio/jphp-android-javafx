@@ -1,0 +1,4 @@
+org.develnext.jphp.zend.ext.ZendExtension
+org.develnext.jphp.json.JsonExtension
+org.venity.jphp.ext.android.AndroidExtension
+org.develnext.jphp.ext.xml.XmlExtension

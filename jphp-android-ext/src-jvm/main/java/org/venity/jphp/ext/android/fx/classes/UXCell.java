@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes;
 
 import javafx.scene.control.Cell;
 import javafx.scene.control.IndexedCell;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Property;
@@ -9,7 +10,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXIndexedCell")
+@Reflection.Name("UXIndexedCell")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXCell<T extends IndexedCell> extends UXLabeled<Cell> {
     interface WrappedInterface {
         @Property Object item();

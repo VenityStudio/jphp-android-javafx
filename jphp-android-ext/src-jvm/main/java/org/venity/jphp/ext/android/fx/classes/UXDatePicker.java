@@ -3,8 +3,10 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.util.StringConverter;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.ext.core.classes.time.WrapTime;
@@ -18,7 +20,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
 
-@Name(JavaFXExtension.NS + "UXDatePicker")
+@Name("UXDatePicker")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXDatePicker extends UXComboBoxBase<DatePicker> {
     interface WrappedInterface {
         @Property

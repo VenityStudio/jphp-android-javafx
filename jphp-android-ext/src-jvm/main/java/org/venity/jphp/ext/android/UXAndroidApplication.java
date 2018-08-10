@@ -8,11 +8,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.DataFormat;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import php.runtime.memory.DoubleMemory;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class UXAndroidApplication extends Application {
 
@@ -44,13 +48,31 @@ public class UXAndroidApplication extends Application {
             root.setPadding(new Insets(8));
             root.setSpacing(8);
             root.setAlignment(Pos.CENTER);
-            root.getChildren().add(new TextArea(throwable.toString() + "\n\r" + trace.toString()));
-            root.getChildren().add(new Label("Fatal error " + throwable.getMessage()));
+
+            TextArea errorArea = new TextArea(throwable.toString() + "\n\r" + trace.toString());
+
+            root.getChildren().add(new Label("Java fatal error !"));
+            root.getChildren().add(errorArea);
+
+            HBox buttonsBox = new HBox();
+            buttonsBox.setSpacing(8);
 
             Button hide = new Button("Hide");
             hide.setOnAction(event -> stage.hide());
+            buttonsBox.getChildren().add(hide);
 
-            root.getChildren().add(hide);
+            Button copy = new Button("Copy error for report");
+            copy.setOnAction(event -> {
+                Map<DataFormat, Object> content = new HashMap<>();
+                content.put(DataFormat.PLAIN_TEXT, errorArea.getText());
+                Clipboard.getSystemClipboard().setContent(content);
+
+                if (Clipboard.getSystemClipboard().getString().equals(errorArea.getText()))
+                    copy.setText("OK");
+            });
+            buttonsBox.getChildren().add(copy);
+
+            root.getChildren().add(buttonsBox);
 
             stage.setScene(new Scene(root, width, height));
 	        stage.show();

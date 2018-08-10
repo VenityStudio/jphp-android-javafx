@@ -5,9 +5,11 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.WritableImage;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.support.control.CanvasEx;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Nullable;
 import php.runtime.annotation.Reflection.Signature;
@@ -23,7 +25,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 
-@Name(JavaFXExtension.NS + "UXCanvas")
+@Name("UXCanvas")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXCanvas<T extends Canvas> extends UXNode<Canvas> {
     interface WrappedInterface {
 

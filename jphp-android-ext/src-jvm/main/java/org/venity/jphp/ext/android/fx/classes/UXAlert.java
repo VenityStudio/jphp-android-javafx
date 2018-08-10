@@ -3,6 +3,7 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
 import php.runtime.annotation.Reflection;
@@ -15,7 +16,8 @@ import php.runtime.lang.BaseWrapper;
 import php.runtime.memory.StringMemory;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "UXAlert")
+@Reflection.Name("UXAlert")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXAlert extends BaseWrapper<Alert> {
     interface WrappedInterface {
     }

@@ -4,14 +4,17 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.text.UXFont;
 import org.venity.jphp.ext.android.fx.support.ImageViewEx;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "UXImageArea")
+@Name("UXImageArea")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXImageArea extends UXCanvas<ImageViewEx> {
     interface WrappedInterface {
         @Property boolean centered();

@@ -3,8 +3,10 @@ package org.venity.jphp.ext.android.fx.classes;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.util.Callback;
+import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.common.StringUtils;
 import php.runtime.env.Environment;
@@ -14,7 +16,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.Scanner;
 
-@Name(JavaFXExtension.NS + "UXComboBox")
+@Name("UXComboBox")
+@Reflection.Namespace(AndroidExtension.NS_FX)
 public class UXComboBox extends UXComboBoxBase {
     interface WrappedInterface {
         @Property ObservableList items();
