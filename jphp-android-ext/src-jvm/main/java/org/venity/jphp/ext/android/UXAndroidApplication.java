@@ -22,14 +22,14 @@ public class UXAndroidApplication extends Application {
 
     @Override
     public void start(Stage stage) {
-        try {
-            System.out.println("Starting JPHP android application");
-            System.out.println("Code with love by venity");
 
-            StandaloneAndroidLoader loader = new StandaloneAndroidLoader();
+	StandaloneAndroidLoader loader = new StandaloneAndroidLoader();
+	System.out.println("Starting JPHP android application");
+        System.out.println("Code with love by venity");
+
+        try {
             loader.setClassLoader(getClass().getClassLoader());
             loader.loadLibrary();
-            loader.run();
         } catch (Throwable throwable)
         {
             Rectangle2D visualBounds = Screen.getPrimary().getVisualBounds();
@@ -73,7 +73,9 @@ public class UXAndroidApplication extends Application {
             root.getChildren().add(buttonsBox);
 
             stage.setScene(new Scene(root, width, height));
-	        stage.show();
-        }
+            stage.show();
+        } finally {
+            loader.run();
+	}
     }
 }

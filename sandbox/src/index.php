@@ -1,15 +1,19 @@
 <?php 
 
-use php\gui\{ UXForm, UXWebView };
+use php\gui\{ UXForm, UXScreen, UXButton };
 
 use php\gui\layout\UXAnchorPane;
 
 $form = new UXForm();
 
-$web = new UXWebView();
-$web->engine->load("https://vk.com/venity");
+$button = new UXButton("Hello from JPHP");
+$button->on("click", fn => $button->text .= " :D");
 
-UXAnchorPane::setAnchor($web, 8);
+$form->add($button);
 
-$form->add($web);
+$form->size = [
+	UXScreen::getWidth(),
+	UXScreen::getHeight()
+];
+
 $form->show();

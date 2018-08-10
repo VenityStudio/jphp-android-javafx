@@ -10,7 +10,7 @@ use php\io\Stream;
  *
  * @jppm-task build_apk as apk
  * @jppm-task build_adb as apk-adb
- * @jppm-task build_realise as apk-realise
+ * @jppm-task build_release as apk-release
  * @jppm-task test_desktop as desktop-run
  * @jppm-task init as init
  */
@@ -23,18 +23,18 @@ class AndroidPlugin
 
         if (!isset($packageData['deps']['jphp-android-ext']))
         {
-            Console::log('-> Installing android extension ...');
+            Console::log('-> installing android extension ...');
 
             Tasks::run('add', [
                 'jphp-android-ext'
             ]);
         }
 
-        Console::log('-> init gradle ...');
+        Console::log('-> install gradle ...');
 
         (new GradlePlugin($e))->install($e);
 
-        Console::log("-> prepare compiler ...");
+        Console::log("-> prepare jphp compiler ...");
 
         \php\lib\fs::makeDir('./.venity/');
         \php\lib\fs::makeFile('./.venity/compiler.jar');
@@ -45,7 +45,7 @@ class AndroidPlugin
     public function generateBuild(string $file, array $androidData)
     {
 
-	    Console::log('-> generate build.gradle for android ...');
+	    Console::log('-> generate build.gradle file ...');
 
 	$buildScript = "buildscript {
     repositories {
@@ -116,7 +116,9 @@ mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"";
             '--dest', './build/compile.jar'
         ], './');
 
-        $exit = $process->inheritIO()->startAndWait()->getExitValue();
+        $exit = $process->startAndWait()->getExitValue();
+
+        // ->inheritIO()
 
         if ($exit != 0) {
             Console::log("[ERROR] Error compiling your хомно php code");
@@ -126,15 +128,14 @@ mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"";
 
         $this->generateBuild('compile.jar', $androidData);
         
-        Console::log('-> starting build apk ...');
+        Console::log('-> starting gradle ...');
 
         /** @var \php\lang\Process $process */
         $process = (new GradlePlugin($event))->gradleProcess([
             $task
         ])->inheritIO()->startAndWait();
 
-        if ($process->getExitValue() == 0)
-            Console::log('-> building done!');
+        exit($process->getExitValue());
     }
 
     public function build_apk(Event $event)
@@ -147,7 +148,7 @@ mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"";
         $this->gradle_build('androidInstall', $event);
     }
 
-    public function build_realise(Event $event)
+    public function build_release(Event $event)
     {
         $this->gradle_build('androidRelease', $event);
     }
