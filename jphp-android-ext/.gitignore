@@ -2,6 +2,8 @@
 /.gradle/**
 /gradle/**
 /vendor/**
+/build/**
+/jars/**
 
 /build.gradle
 /gradlew
