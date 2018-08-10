@@ -28,9 +28,7 @@ public class UXAndroidApplication extends Application {
 
             StandaloneAndroidLoader loader = new StandaloneAndroidLoader();
             loader.setClassLoader(getClass().getClassLoader());
-            loader.loadExtensions();
             loader.loadLibrary();
-
             loader.run();
         } catch (Throwable throwable)
         {

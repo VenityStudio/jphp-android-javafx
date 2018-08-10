@@ -18,3 +18,4 @@ devDeps:
 android:
   sdk: '22'
   sdk-tools: 28.0.2
+  package-name: 'org.venity.jphp.test'

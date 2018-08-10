@@ -5,5 +5,5 @@ plugins:
   - 'Gradle'
 
 deps:
-  jphp-runtime: '*'
+  jphp-runtime: '1.0.3'
   jphp-xml-ext: '*'

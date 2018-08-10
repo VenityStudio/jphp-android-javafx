@@ -8,7 +8,10 @@ use php\io\Stream;
  * Class AndroidPlugin
  * @jppm-task-prefix android
  *
- * @jppm-task build as build
+ * @jppm-task build_apk as apk
+ * @jppm-task build_adb as apk-adb
+ * @jppm-task build_realise as apk-realise
+ * @jppm-task test_desktop as desktop-run
  * @jppm-task init as init
  */
 class AndroidPlugin
@@ -27,26 +30,29 @@ class AndroidPlugin
             ]);
         }
 
-        Console::log('-> init gradle');
+        Console::log('-> init gradle ...');
 
         (new GradlePlugin($e))->install($e);
 
-        $sources = $packageData['sources'];
+        Console::log("-> prepare compiler ...");
 
-        foreach ($sources as $key => $source)
-            $sources[$key] = '"' . $source . '"';
+        \php\lib\fs::makeDir('./.venity/');
+        \php\lib\fs::makeFile('./.venity/compiler.jar');
+
+        Stream::putContents('./.venity/compiler.jar', Stream::getContents("res://compiler.jar"));
     }
 
     public function generateBuild(string $file, array $androidData)
     {
-	Console::log('-> generate build.gradle for android ...');        
+
+	    Console::log('-> generate build.gradle for android ...');
 
 	$buildScript = "buildscript {
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'org.javafxports:jfxmobile-plugin:1.3.8'
+        classpath 'org.javafxports:jfxmobile-plugin:1.3.10'
     }
 }
 
@@ -65,8 +71,9 @@ jfxmobile {
     javafxportsVersion = '8.60.9'
 
     android {
-        compileSdkVersion = {$androidData['sdk']}
-        buildToolsVersion = '{$androidData['sdk-tools']}'
+        compileSdkVersion  = {$androidData['sdk']}
+        buildToolsVersion  = '{$androidData['sdk-tools']}'
+        applicationPackage = '{$androidData['package-name']}'
     }
 }
 
@@ -75,8 +82,10 @@ mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"";
         \php\io\Stream::putContents('./build.gradle', $buildScript);
     }
 
-    public function build(Event $event)
+    public function gradle_build(string $task, Event $event)
     {
+        $this->init($event);
+
         Console::log('-> starting build jar ...');
 
         Tasks::run('build');
@@ -102,14 +111,18 @@ mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"";
         Console::log('-> starting compiler ...');
 
         $process = new \php\lang\Process([
-            'java', '-jar', './phb2class.jar',
+            'java', '-jar', './.venity/compiler.jar',
             '--src', './build/out',
             '--dest', './build/compile.jar'
         ], './');
 
         $exit = $process->inheritIO()->startAndWait()->getExitValue();
 
-        if ($exit != 0) return;
+        if ($exit != 0) {
+            Console::log("[ERROR] Error compiling your хомно php code");
+            return;
+        } else
+            Console::log(" -> done");
 
         $this->generateBuild('compile.jar', $androidData);
         
@@ -117,10 +130,30 @@ mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"";
 
         /** @var \php\lang\Process $process */
         $process = (new GradlePlugin($event))->gradleProcess([
-            'android'
+            $task
         ])->inheritIO()->startAndWait();
 
         if ($process->getExitValue() == 0)
             Console::log('-> building done!');
+    }
+
+    public function build_apk(Event $event)
+    {
+        $this->gradle_build('android', $event);
+    }
+
+    public function build_adb(Event $event)
+    {
+        $this->gradle_build('androidInstall', $event);
+    }
+
+    public function build_realise(Event $event)
+    {
+        $this->gradle_build('androidRelease', $event);
+    }
+
+    public function test_desktop(Event $event)
+    {
+        $this->gradle_build('run', $event);
     }
 }
