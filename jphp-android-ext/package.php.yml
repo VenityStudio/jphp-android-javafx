@@ -4,6 +4,13 @@ version: '1.0.0'
 plugins:
   - 'Gradle'
 
+gradle:
+  repos:
+    - "http://nexus.gluonhq.com/nexus/content/repositories/releases/" # gluon repository
+  deps:
+    - "com.gluonhq:charm:4.0.0"
+    - "com.airhacks:afterburner.mfx:1.6.2"
+
 deps:
-  jphp-runtime: '1.0.3'
+  jphp-runtime: '*'
   jphp-xml-ext: '*'

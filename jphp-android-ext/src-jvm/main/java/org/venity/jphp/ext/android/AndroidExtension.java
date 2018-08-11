@@ -1,5 +1,8 @@
 package org.venity.jphp.ext.android;
 
+import com.gluonhq.charm.glisten.application.MobileApplication;
+import com.gluonhq.charm.glisten.layout.MobileLayoutPane;
+import com.gluonhq.charm.glisten.mvc.View;
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.beans.value.ObservableValue;
@@ -31,6 +34,9 @@ import javafx.scene.text.Font;
 import javafx.scene.web.*;
 import javafx.stage.*;
 import netscape.javascript.JSException;
+import org.venity.jphp.ext.android.android.classes.UXMobileApplication;
+import org.venity.jphp.ext.android.android.classes.UXMobileLayoutPane;
+import org.venity.jphp.ext.android.android.classes.UXView;
 import org.venity.jphp.ext.android.fx.bind.*;
 import org.venity.jphp.ext.android.fx.classes.*;
 import org.venity.jphp.ext.android.fx.classes.animation.*;
@@ -100,21 +106,24 @@ public class AndroidExtension extends Extension {
 
         registerWrapperClass(scope, ObservableValue.class, UXValue.class);
         registerWrapperClass(scope, ObservableList.class, UXList.class);
-        registerWrapperClass(scope, Application.class, UXApplication.class);
+        //registerWrapperClass(scope, Application.class, UXApplication.class);
+        registerWrapperClass(scope, MobileApplication.class, UXMobileApplication.class);
         registerWrapperClass(scope, Screen.class, UXScreen.class);
 
         registerWrapperClass(scope, Font.class, UXFont.class);
         registerWrapperClass(scope, Color.class, UXColor.class);
         registerWrapperClass(scope, Image.class, UXImage.class);
 
-        registerWrapperClass(scope, Window.class, UXWindow.class);
-        registerWrapperClass(scope, Stage.class, UXForm.class);
-        registerWrapperClass(scope, PopupWindow.class, UXPopupWindow.class);
+        //registerWrapperClass(scope, Window.class, UXWindow.class);
+        //registerWrapperClass(scope, Stage.class, UXForm.class);
+        //registerWrapperClass(scope, PopupWindow.class, UXPopupWindow.class);
         registerWrapperClass(scope, Tooltip.class, UXTooltip.class);
         registerWrapperClass(scope, ContextMenu.class, UXContextMenu.class);
         registerWrapperClass(scope, MenuItem.class, UXMenuItem.class);
         registerWrapperClass(scope, Menu.class, UXMenu.class);
         registerWrapperClass(scope, Scene.class, UXScene.class);
+
+        registerWrapperClass(scope, View.class, UXView.class);
 
         registerWrapperClass(scope, Node.class, UXNode.class);
         registerWrapperClass(scope, Parent.class, UXParent.class);
@@ -131,6 +140,8 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, HBox.class, UXHBox.class);
         registerWrapperClass(scope, FlowPane.class, UXFlowPane.class);
         registerWrapperClass(scope, TilePane.class, UXTilePane.class);
+        registerWrapperClass(scope, BorderPane.class, UXBorderPane.class);
+        registerWrapperClass(scope, MobileLayoutPane.class, UXMobileLayoutPane.class);
 
         registerWrapperClass(scope, Labeled.class, UXLabeled.class);
         registerWrapperClass(scope, ButtonBase.class, UXButtonBase.class);

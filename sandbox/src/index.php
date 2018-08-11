@@ -1,19 +1,12 @@
 <?php 
 
-use php\gui\{ UXForm, UXScreen, UXButton };
+echo "Приветик из JPHP";
 
-use php\gui\layout\UXAnchorPane;
+use php\android{ UXView, UXMobileApplication };
 
-$form = new UXForm();
+$view = new UXView("home", new \php\gui\UXButton("test"));
 
-$button = new UXButton("Hello from JPHP");
-$button->on("click", fn => $button->text .= " :D");
+UXMobileApplication::addView($view->getName(), $view);
+UXMobileApplication::showView($view->getName());
 
-$form->add($button);
-
-$form->size = [
-	UXScreen::getWidth(),
-	UXScreen::getHeight()
-];
-
-$form->show();
+echo "Скрипт закончен";

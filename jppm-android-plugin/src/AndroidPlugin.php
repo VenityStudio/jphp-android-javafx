@@ -70,6 +70,11 @@ dependencies {
 jfxmobile {
     javafxportsVersion = '8.60.9'
 
+    downConfig {
+        version = '3.8.0'
+        plugins 'display', 'lifecycle', 'statusbar', 'storage'
+    }
+
     android {
         compileSdkVersion  = {$androidData['sdk']}
         buildToolsVersion  = '{$androidData['sdk-tools']}'
@@ -116,13 +121,11 @@ mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"";
             '--dest', './build/compile.jar'
         ], './');
 
-        $exit = $process->startAndWait()->getExitValue();
-
-        // ->inheritIO()
+        $exit = $process->inheritIO()->startAndWait()->getExitValue();
 
         if ($exit != 0) {
             Console::log("[ERROR] Error compiling your хомно php code");
-            return;
+            exit($exit);
         } else
             Console::log(" -> done");
 
