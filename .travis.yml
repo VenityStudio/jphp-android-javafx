@@ -19,6 +19,6 @@ script:
     - jppm version
     - cd jphp-android-ext && jppm publish --yes && cd ..
     - cd jppm-android-plugin && jppm publish --yes cd ..
-    - cd sandbox
+    - cd ./sandbox/
     - jppm update
     - jppm android:apk
