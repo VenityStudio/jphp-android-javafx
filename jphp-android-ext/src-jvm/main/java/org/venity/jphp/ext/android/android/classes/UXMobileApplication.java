@@ -3,6 +3,7 @@ package org.venity.jphp.ext.android.android.classes;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.mvc.View;
 import org.venity.jphp.ext.android.AndroidExtension;
+import org.venity.jphp.ext.android.UXAndroidApplication;
 import org.venity.jphp.ext.android.fx.classes.UXApplication;
 import php.runtime.annotation.Reflection;
 import php.runtime.env.Environment;
@@ -23,12 +24,12 @@ public class UXMobileApplication extends UXApplication {
     @Reflection.Signature
     public static void addView(String name, View view)
     {
-        MobileApplication.getInstance().addViewFactory(name, () -> return view);
+        UXAndroidApplication.getInstance().addViewFactory(name, () -> view);
     }
 
     @Reflection.Signature
     public static void showView(String name)
     {
-        MobileApplication.getInstance().switchView(name);
+        UXAndroidApplication.getInstance().switchView(name);
     }
 }
