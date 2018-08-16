@@ -59,8 +59,14 @@ class AndroidPlugin
 apply plugin: 'org.javafxports.jfxmobile'
 
 repositories {
+    maven {
+        name 'gulon'
+        url \"http://nexus.gluonhq.com/nexus/content/repositories/releases/\" // gluon repository
+    }
+
     mavenLocal()
     jcenter()
+  
 }
 
 dependencies {
