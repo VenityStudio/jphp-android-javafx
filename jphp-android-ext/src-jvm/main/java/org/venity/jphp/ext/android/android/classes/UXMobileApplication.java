@@ -23,7 +23,7 @@ public class UXMobileApplication extends UXApplication {
     @Reflection.Signature
     public static void addView(String name, View view)
     {
-        MobileApplication.getInstance().addViewFactory(name, () -> view);
+        MobileApplication.getInstance().addViewFactory(name, () -> return view);
     }
 
     @Reflection.Signature
