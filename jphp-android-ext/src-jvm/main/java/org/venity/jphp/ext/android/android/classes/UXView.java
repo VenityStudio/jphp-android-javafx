@@ -29,12 +29,12 @@ public class UXView extends UXMobileLayoutPane {
 
     @Reflection.Signature
     public void __construct(String name) {
-        __construct(name, null);
+        __wrappedObject = new View(name);
     }
 
     @Override
     public View getWrappedObject() {
-        return (View) super.getWrappedObject();
+        return (View) __wrappedObject;
     }
 
     @Reflection.Signature
