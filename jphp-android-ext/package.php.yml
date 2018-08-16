@@ -8,7 +8,7 @@ gradle:
   repos:
     - "http://nexus.gluonhq.com/nexus/content/repositories/releases/" # gluon repository
   deps:
-    - "com.gluonhq:charm:4.0.0"
+    - "com.gluonhq:charm:5.1.0-SNAPSHOT"
     - "com.airhacks:afterburner.mfx:1.6.2"
 
 deps:
