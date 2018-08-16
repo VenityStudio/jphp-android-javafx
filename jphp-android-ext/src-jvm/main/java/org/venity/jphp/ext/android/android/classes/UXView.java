@@ -21,12 +21,7 @@ public class UXView extends UXMobileLayoutPane {
     public UXView(Environment env, ClassEntity clazz) {
         super(env, clazz);
     }
-
-    @Reflection.Signature
-    public void __construct(String name, Node center) {
-        __wrappedObject = new View(name, center);
-    }
-
+    
     @Reflection.Signature
     public void __construct(String name) {
         __wrappedObject = new View(name);
