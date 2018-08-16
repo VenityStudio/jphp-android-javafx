@@ -1,7 +1,6 @@
 name: sandbox
 version: 1.0.0
 deps:
-  jphp-zend-ext: '*'
   jphp-android-ext: '*' # android gui + launcher
 
 plugins:
