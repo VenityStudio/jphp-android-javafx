@@ -104,7 +104,7 @@ mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"";
 
         $zip = new \compress\ZipArchive(\php\lib\fs::abs('./build/' . $buildFileName . '.jar'));
         $zip->readAll(function (\compress\ZipArchiveEntry $entry, ?Stream $stream) {
-            Console::log(' -> unpack ' . $entry->name);
+            echo '.';
             if (!$entry->isDirectory())
             {
                 \php\lib\fs::makeFile(\php\lib\fs::abs('./build/out/' . $entry->name));
@@ -112,7 +112,8 @@ mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"";
             }
             else \php\lib\fs::makeDir(\php\lib\fs::abs('./build/out/' . $entry->name));
         });
-
+        echo " done\n";
+	    
         Console::log('-> starting compiler ...');
 
         $process = new \php\lang\Process([
