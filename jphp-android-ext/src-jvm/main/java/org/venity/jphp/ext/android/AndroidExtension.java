@@ -114,9 +114,9 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, Color.class, UXColor.class);
         registerWrapperClass(scope, Image.class, UXImage.class);
 
-        //registerWrapperClass(scope, Window.class, UXWindow.class);
-        //registerWrapperClass(scope, Stage.class, UXForm.class);
-        //registerWrapperClass(scope, PopupWindow.class, UXPopupWindow.class);
+        registerWrapperClass(scope, Window.class, UXWindow.class);
+        registerWrapperClass(scope, Stage.class, UXForm.class);
+        registerWrapperClass(scope, PopupWindow.class, UXPopupWindow.class);
         registerWrapperClass(scope, Tooltip.class, UXTooltip.class);
         registerWrapperClass(scope, ContextMenu.class, UXContextMenu.class);
         registerWrapperClass(scope, MenuItem.class, UXMenuItem.class);
