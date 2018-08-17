@@ -26,6 +26,11 @@ public class UXView extends UXMobileLayoutPane {
     public void __construct(String name) {
         __wrappedObject = new View(name);
     }
+    
+    @Reflection.Signature
+    public void __construct() {
+        __construct(HOME_NAME);
+    }
 
     @Override
     public View getWrappedObject() {
