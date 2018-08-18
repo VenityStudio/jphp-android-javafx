@@ -8,6 +8,7 @@ public class UXAndroidApplication extends MobileApplication {
 
     @Override
     public void postInit(Scene scene) {
+	    try {
 	StandaloneAndroidLoader loader = new StandaloneAndroidLoader();
 	System.out.println("Starting JPHP android application");
         System.out.println("Code with love by venity");
@@ -15,5 +16,8 @@ public class UXAndroidApplication extends MobileApplication {
         loader.setClassLoader(getClass().getClassLoader());
         loader.loadLibrary();
         loader.run();
+		    } catch (Exception e) {
+		        e.printStackTrace(); 
+		    }
     }
 }
