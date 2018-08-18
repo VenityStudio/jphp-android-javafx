@@ -37,10 +37,6 @@ public class UXView extends UXMobileLayoutPane {
         __construct(HOME_NAME);
     }
 
-    @Override
-    public View getWrappedObject() {
-        return (View) __wrappedObject;
-    }
 
     @Reflection.Signature
     public boolean isShowing() {
