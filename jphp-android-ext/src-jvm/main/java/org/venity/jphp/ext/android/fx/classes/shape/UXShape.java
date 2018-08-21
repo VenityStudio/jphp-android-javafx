@@ -10,7 +10,7 @@ import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "shape\\UXShape")
+@Name("php\\gui\\shape\\UXShape")
 public abstract class UXShape<T extends Shape> extends UXNode<Shape> {
     interface WrappedInterface {
         @Property boolean smooth();
