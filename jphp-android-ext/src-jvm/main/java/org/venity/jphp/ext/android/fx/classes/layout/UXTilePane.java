@@ -10,7 +10,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name("php\\gui\\layout\\UXTilePane")
+@Reflection.Name("UXTilePane")
+@Reflection.Namespace("php\\gui\\layout")
 public class UXTilePane extends UXPane<TilePane> {
     interface WrappedInterface {
         @Property double hgap();
