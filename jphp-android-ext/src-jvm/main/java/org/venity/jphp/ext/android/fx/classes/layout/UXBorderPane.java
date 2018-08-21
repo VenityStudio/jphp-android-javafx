@@ -8,7 +8,7 @@ import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
 @Reflection.Name("UXBorderPane")
-@Reflection.Namespace(AndroidExtension.NS_FX)
+@Reflection.Namespace("php\\gui\\layout")
 public class UXBorderPane extends UXPane<BorderPane> {
 
     public UXBorderPane(Environment env, BorderPane wrappedObject) {
