@@ -13,7 +13,7 @@ import php.runtime.reflection.ClassEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-@Name(JavaFXExtension.NS + "shape\\UXPolygon")
+@Name("php\\gui\\shape\\UXPolygon")
 public class UXPolygon extends UXShape<Polygon> {
     interface WrappedInterface {
         @Property UXList points();
