@@ -8,7 +8,7 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "shape\\UXEllipse")
+@Name("php\\gui\\shape\\UXEllipse")
 public class UXEllipse extends UXShape<Ellipse> {
     interface WrappedInterface {
         @Property double radiusX();
