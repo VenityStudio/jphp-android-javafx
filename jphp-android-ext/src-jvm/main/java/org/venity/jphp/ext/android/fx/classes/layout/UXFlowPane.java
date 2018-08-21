@@ -12,7 +12,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name("php\\gui\\layout\\UXFlowPane")
+@Reflection.Name("UXFlowPane")
+@Reflection.Namespace("php\\gui\\layout")
 public class UXFlowPane<T extends FlowPane> extends UXPane<FlowPane> {
     interface WrappedInterface {
         @Property VPos rowValignment();
