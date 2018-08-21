@@ -8,7 +8,7 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "shape\\UXCircle")
+@Name("php\\gui\\shape\\UXCircle")
 public class UXCircle extends UXShape<Circle> {
     interface WrappedInterface {
         @Property double radius();
