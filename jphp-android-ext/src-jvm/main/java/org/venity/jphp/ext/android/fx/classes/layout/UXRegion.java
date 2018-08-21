@@ -13,7 +13,7 @@ import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "layout\\UXRegion")
+@Name("php\\gui\\layout\\UXRegion")
 public class UXRegion<T extends Region> extends UXParent<Region> {
     interface WrappedInterface {
         @Property double maxWidth();
