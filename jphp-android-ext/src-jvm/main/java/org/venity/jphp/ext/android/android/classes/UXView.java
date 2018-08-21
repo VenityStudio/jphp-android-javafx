@@ -4,15 +4,19 @@ import com.gluonhq.charm.glisten.mvc.View;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import org.venity.jphp.ext.android.AndroidExtension;
+import org.venity.jphp.ext.android.android.classes.support.PView;
 import php.runtime.annotation.Reflection;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
+
+import javax.xml.ws.spi.Invoker;
 
 @Reflection.Name("UXView")
 @Reflection.Namespace(AndroidExtension.NS_ANDROID)
 public class UXView extends UXMobileLayoutPane {
 
     public static final String HOME_NAME = "home";
+
 
     public UXView(Environment env, View wrappedObject) {
         super(env, wrappedObject);
@@ -29,9 +33,15 @@ public class UXView extends UXMobileLayoutPane {
     
     @Reflection.Signature
     public void __construct(String name) {
-        __wrappedObject = new View(name);
+        __wrappedObject = new PView(name);
     }
-    
+
+    @Reflection.Signature
+    public void onUpdateAppBar(Environment env, php.runtime.invoke.Invoker invoker){
+        PView pv = (PView) getWrappedObject();
+        pv.setOnAppBarUpdate(invoker, env);
+    }
+
     @Reflection.Signature
     public void __construct() {
         __construct(HOME_NAME);

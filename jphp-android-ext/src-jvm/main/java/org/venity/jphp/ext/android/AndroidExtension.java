@@ -1,8 +1,11 @@
 package org.venity.jphp.ext.android;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
+import com.gluonhq.charm.glisten.control.*;
 import com.gluonhq.charm.glisten.layout.MobileLayoutPane;
+import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
+import com.gluonhq.charm.glisten.visual.Swatch;
 import javafx.animation.*;
 import javafx.application.Application;
 import javafx.beans.value.ObservableValue;
@@ -17,6 +20,12 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -34,9 +43,8 @@ import javafx.scene.text.Font;
 import javafx.scene.web.*;
 import javafx.stage.*;
 import netscape.javascript.JSException;
-import org.venity.jphp.ext.android.android.classes.UXMobileApplication;
-import org.venity.jphp.ext.android.android.classes.UXMobileLayoutPane;
-import org.venity.jphp.ext.android.android.classes.UXView;
+import org.venity.jphp.ext.android.android.classes.*;
+import org.venity.jphp.ext.android.android.classes.support.PView;
 import org.venity.jphp.ext.android.fx.bind.*;
 import org.venity.jphp.ext.android.fx.classes.*;
 import org.venity.jphp.ext.android.fx.classes.animation.*;
@@ -129,6 +137,7 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, Parent.class, UXParent.class);
         registerWrapperClass(scope, Region.class, UXRegion.class);
         registerWrapperClass(scope, Control.class, UXControl.class);
+        registerWrapperClass(scope, Swatch.class, UXSwatch.class);
 
         registerWrapperClass(scope, Group.class, UXGroup.class);
         registerWrapperClass(scope, Pane.class, UXPane.class);
@@ -186,8 +195,12 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, TreeView.class, UXTreeView.class);
         registerWrapperClass(scope, Separator.class, UXSeparator.class);
         registerWrapperClass(scope, ListView.class, UXListView.class);
+        registerWrapperClass(scope, AppBar.class, UXAppBar.class);
+        registerWrapperClass(scope, com.gluonhq.charm.glisten.control.Dialog.class, UXAndroidDialog.class);
         MemoryOperation.registerWrapper(ListViewEx.class, UXListView.class);
         registerWrapperClass(scope, FileChooser.class, UXFileChooser.class);
+        registerWrapperClass(scope, NavigationDrawer.class, UXNavigationDrawer.class);
+        registerWrapperClass(scope, SidePopupView.class, UXSidePopupView.class);
         registerWrapperClass(scope, DirectoryChooser.class, UXDirectoryChooser.class);
         registerWrapperClass(scope, Slider.class, UXSlider.class);
         registerWrapperClass(scope, DatePicker.class, UXDatePicker.class);

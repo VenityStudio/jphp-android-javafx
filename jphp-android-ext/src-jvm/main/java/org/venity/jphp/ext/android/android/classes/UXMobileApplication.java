@@ -1,7 +1,13 @@
 package org.venity.jphp.ext.android.android.classes;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
+import com.gluonhq.charm.glisten.control.AppBar;
+import com.gluonhq.charm.glisten.control.NavigationDrawer;
+import com.gluonhq.charm.glisten.layout.Layer;
+import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
+import com.gluonhq.charm.glisten.visual.Swatch;
+import javafx.scene.Node;
 import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.UXAndroidApplication;
 import org.venity.jphp.ext.android.fx.classes.UXApplication;
@@ -22,9 +28,33 @@ public class UXMobileApplication extends UXApplication {
     }
 
     @Reflection.Signature
+    public static void setSwatch(Swatch swatch)
+    {
+        UXAndroidApplication.getInstance().setSwatch(swatch);
+    }
+
+    @Reflection.Signature
+    public static AppBar getAppBar()
+    {
+        return UXAndroidApplication.getInstance().getAppBar();
+    }
+
+    @Reflection.Signature
     public static void addView(String name, View view)
     {
         UXAndroidApplication.getInstance().addViewFactory(name, () -> view);
+    }
+
+    @Reflection.Signature
+    public static void addLayout(String name, SidePopupView spv)
+    {
+        UXAndroidApplication.getInstance().addLayerFactory(name, () -> spv);
+    }
+
+    @Reflection.Signature
+    public static void showLayout(String name)
+    {
+        UXAndroidApplication.getInstance().showLayer(name);
     }
 
     @Reflection.Signature

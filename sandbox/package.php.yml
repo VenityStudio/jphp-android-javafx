@@ -1,19 +1,16 @@
 name: sandbox
 version: 1.0.0
 deps:
-  jphp-android-ext: '*' # android gui + launcher
-
+  jphp-android-ext: '*'
 plugins:
 - App
 sources:
 - src
 includes:
 - index.php
-
 devDeps:
   jppm-android-plugin: '*'
-
 android:
-  sdk: 28
+  sdk: '28'
   sdk-tools: 28.0.2
-  package-name: 'org.venity.jphp.test'
+  package-name: org.venity.jphp.test
