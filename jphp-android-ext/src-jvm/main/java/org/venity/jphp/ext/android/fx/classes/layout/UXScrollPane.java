@@ -13,7 +13,7 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "layout\\UXScrollPane")
+@Reflection.Name("php\\gui\\layout\\UXScrollPane")
 public class UXScrollPane<T extends ScrollPane> extends UXControl<ScrollPane> {
     interface WrappedInterface {
         @Property Node content();
