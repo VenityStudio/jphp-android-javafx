@@ -18,7 +18,7 @@ import php.runtime.reflection.ClassEntity;
 import java.io.InputStream;
 import java.util.List;
 
-@Reflection.Name(JavaFXExtension.NS + "text\\UXFont")
+@Reflection.Name("php\\gui\\text\\UXFont")
 public class UXFont extends BaseWrapper<Font> {
     private OwnerObject ownerObject;
 
