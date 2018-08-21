@@ -10,7 +10,7 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.List;
 
-@Reflection.Name(JavaFXExtension.NS + "layout\\UXStackPane")
+@Reflection.Name("php\\gui\\layout\\UXStackPane")
 public class UXStackPane<T extends StackPane> extends UXPane<T> {
     interface WrappedInterface {
 
