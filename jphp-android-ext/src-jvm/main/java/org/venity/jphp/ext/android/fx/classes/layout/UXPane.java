@@ -10,7 +10,7 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "layout\\UXPane")
+@Name("php\\gui\\layout\\UXPane")
 public class UXPane<T extends Pane> extends UXRegion<T> {
     interface WrappedInterface {
 
