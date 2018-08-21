@@ -8,7 +8,7 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "shape\\UXRectangle")
+@Name("php\\gui\\shape\\UXRectangle")
 public class UXRectangle extends UXShape<Rectangle> {
     interface WrappedInterface {
         @Property double arcWidth();
