@@ -8,7 +8,7 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "layout\\UXAnchorPane")
+@Name("php\\gui\\layout\\UXAnchorPane")
 public class UXAnchorPane<T extends AnchorPane> extends UXPane<AnchorPane> {
     interface WrappedInterface {
 
