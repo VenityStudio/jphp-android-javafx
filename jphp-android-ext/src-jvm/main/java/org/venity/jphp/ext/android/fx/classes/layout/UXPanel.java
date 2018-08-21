@@ -11,7 +11,7 @@ import php.runtime.annotation.Reflection.Property;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "layout\\UXPanel")
+@Reflection.Name("php\\gui\\layout\\UXPanel")
 public class UXPanel<T extends Panel> extends UXAnchorPane<Panel> {
     interface WrappedInterface {
         @Property String title();
