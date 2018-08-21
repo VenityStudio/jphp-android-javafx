@@ -12,7 +12,7 @@ import php.runtime.lang.BaseWrapper;
 import php.runtime.memory.StringMemory;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "paint\\UXColor")
+@Reflection.Name("php\\gui\\paint\\UXColor")
 public class UXColor extends BaseWrapper<Color> {
     interface WrappedInterface {
         @Property
