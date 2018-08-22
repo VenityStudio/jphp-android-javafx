@@ -4,11 +4,13 @@ import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection.Name;
+import php.runtime.annotation.Reflection.Namespace;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name("php\\gui\\layout\\UXAnchorPane")
+@Name("UXAnchorPane")
+@Namespace("php\\gui\\layout")
 public class UXAnchorPane<T extends AnchorPane> extends UXPane<AnchorPane> {
     interface WrappedInterface {
 

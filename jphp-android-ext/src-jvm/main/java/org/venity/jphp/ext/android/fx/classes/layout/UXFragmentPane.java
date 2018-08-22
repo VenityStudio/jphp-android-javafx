@@ -13,7 +13,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.List;
 
-@Reflection.Name("php\\gui\\layout\\UXFragmentPane")
+@Reflection.Name("UXFragmentPane")
+@Reflection.Namespace("php\\gui\\layout")
 public class UXFragmentPane<T extends FragmentPane> extends UXVBox<FragmentPane> {
     interface WrappedInterface {
         @Property

@@ -11,7 +11,8 @@ import php.runtime.annotation.Reflection.Property;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name("php\\gui\\layout\\UXPanel")
+@Reflection.Name("UXPanel")
+@Reflection.Namespace("php\\gui\\layout")
 public class UXPanel<T extends Panel> extends UXAnchorPane<Panel> {
     interface WrappedInterface {
         @Property String title();

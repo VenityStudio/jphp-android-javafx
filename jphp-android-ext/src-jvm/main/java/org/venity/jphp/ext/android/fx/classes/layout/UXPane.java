@@ -6,11 +6,13 @@ import javafx.scene.layout.Pane;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.annotation.Reflection.Getter;
 import php.runtime.annotation.Reflection.Name;
+import php.runtime.annotation.Reflection.Namespace;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name("php\\gui\\layout\\UXPane")
+@Name("UXPane")
+@Namespace("php\\gui\\layout")
 public class UXPane<T extends Pane> extends UXRegion<T> {
     interface WrappedInterface {
 
