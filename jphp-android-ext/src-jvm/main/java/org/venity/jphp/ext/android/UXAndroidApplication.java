@@ -25,6 +25,7 @@ public class UXAndroidApplication extends MobileApplication {
 				loader.loadLibrary();
 				loader.run();
 		} catch (Exception e) {
+
 			getAppBar().setNavIcon(MaterialDesignIcon.CLOSE.button(event -> {
 				System.exit(1);
 			}));

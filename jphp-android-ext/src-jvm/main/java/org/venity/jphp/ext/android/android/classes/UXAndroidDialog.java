@@ -1,9 +1,11 @@
 package org.venity.jphp.ext.android.android.classes;
 
 import com.gluonhq.charm.glisten.control.Dialog;
+import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import javafx.scene.Node;
 import javafx.scene.control.ButtonBase;
 import org.venity.jphp.ext.android.AndroidExtension;
+import org.venity.jphp.ext.android.fx.classes.UXList;
 import php.runtime.annotation.Reflection;
 import php.runtime.env.Environment;
 import php.runtime.lang.BaseWrapper;
@@ -61,6 +63,11 @@ public class UXAndroidDialog extends BaseWrapper<Dialog>{
     @Reflection.Setter
     public void setTitle(Node N){
         getWrappedObject().setTitle(N);
+    }
+
+    @Reflection.Getter
+    public UXList<ButtonBase> getItems(){
+        return new UXList<ButtonBase>(__env__, getWrappedObject().getButtons());
     }
 
     @Reflection.Getter

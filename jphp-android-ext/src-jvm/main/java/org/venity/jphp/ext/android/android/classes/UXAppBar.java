@@ -4,6 +4,7 @@ import com.gluonhq.charm.glisten.control.AppBar;
 import javafx.scene.Node;
 import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.UXControl;
+import org.venity.jphp.ext.android.fx.classes.UXList;
 import php.runtime.annotation.Reflection;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
@@ -54,6 +55,11 @@ public class UXAppBar extends UXControl<AppBar> {
     @Reflection.Getter
     public Node getNavIcon(){
         return getWrappedObject().getNavIcon();
+    }
+
+    @Reflection.Getter
+    public UXList<Node> getItems(){
+        return new UXList<Node>(__env__, getWrappedObject().getActionItems());
     }
 
     @Reflection.Setter

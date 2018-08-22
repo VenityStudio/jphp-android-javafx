@@ -1,10 +1,12 @@
 package org.venity.jphp.ext.android;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
+import com.gluonhq.charm.glisten.application.StatusBar;
 import com.gluonhq.charm.glisten.control.*;
 import com.gluonhq.charm.glisten.layout.MobileLayoutPane;
 import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
+import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import com.gluonhq.charm.glisten.visual.Swatch;
 import javafx.animation.*;
 import javafx.application.Application;
@@ -164,6 +166,7 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, ImageView.class, UXImageView.class);
         registerWrapperClass(scope, ImageViewEx.class, UXImageArea.class);
         registerWrapperClass(scope, MenuBar.class, UXMenuBar.class);
+        registerWrapperClass(scope, StatusBar.class, UXStatusBar.class);
         registerWrapperClass(scope, TextInputControl.class, UXTextInputControl.class);
         registerWrapperClass(scope, TextArea.class, UXTextArea.class);
         registerWrapperClass(scope, TextField.class, UXTextField.class);
@@ -193,7 +196,11 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, SplitPane.class, UXSplitPane.class);
         registerWrapperClass(scope, TreeItem.class, UXTreeItem.class);
         registerWrapperClass(scope, TreeView.class, UXTreeView.class);
+        registerWrapperClass(scope, Toast.class, UXToast.class);
+        registerWrapperClass(scope, Rating.class, UXRating.class);
         registerWrapperClass(scope, Separator.class, UXSeparator.class);
+        registerWrapperClass(scope, com.gluonhq.charm.glisten.control.Alert.class, UXAndroidAlert.class);
+        registerWrapperClass(scope, MaterialDesignIcon.class, UXMaterialIcons.class);
         registerWrapperClass(scope, ListView.class, UXListView.class);
         registerWrapperClass(scope, AppBar.class, UXAppBar.class);
         registerWrapperClass(scope, com.gluonhq.charm.glisten.control.Dialog.class, UXAndroidDialog.class);

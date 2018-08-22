@@ -1,6 +1,7 @@
 package org.venity.jphp.ext.android.android.classes;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
+import com.gluonhq.charm.glisten.application.StatusBar;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.NavigationDrawer;
 import com.gluonhq.charm.glisten.layout.Layer;
@@ -43,6 +44,11 @@ public class UXMobileApplication extends UXApplication {
     public static void addView(String name, View view)
     {
         UXAndroidApplication.getInstance().addViewFactory(name, () -> view);
+    }
+
+    @Reflection.Signature
+    public static StatusBar getStatusbar(){
+        return UXAndroidApplication.getInstance().getStatusBar();
     }
 
     @Reflection.Signature
