@@ -2,13 +2,15 @@ package org.venity.jphp.ext.android.fx.classes.shape;
 
 import javafx.scene.shape.Rectangle;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Property;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name("php\\gui\\shape\\UXRectangle")
+@Name("UXRectangle")
+@Reflection.Namespace("php\\gui\\shape")
 public class UXRectangle extends UXShape<Rectangle> {
     interface WrappedInterface {
         @Property double arcWidth();

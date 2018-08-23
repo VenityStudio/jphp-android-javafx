@@ -12,7 +12,8 @@ import php.runtime.lang.BaseWrapper;
 import php.runtime.memory.StringMemory;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name("php\\gui\\paint\\UXColor")
+@Reflection.Name("UXColor")
+@Reflection.Namespace("php\\gui\\paint")
 public class UXColor extends BaseWrapper<Color> {
     interface WrappedInterface {
         @Property

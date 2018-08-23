@@ -9,7 +9,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "event\\UXWindowEvent")
+@Reflection.Name("UXWindowEvent")
+@Reflection.Namespace("php\\gui\\event")
 public class UXWindowEvent extends UXEvent {
     public UXWindowEvent(Environment env, WindowEvent wrappedObject) {
         super(env, wrappedObject);

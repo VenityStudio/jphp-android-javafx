@@ -14,7 +14,8 @@ import php.runtime.invoke.Invoker;
 import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "event\\UXKeyboardManager")
+@Reflection.Name("UXKeyboardManager")
+@Reflection.Namespace("php\\gui\\event")
 public class UXKeyboardManager extends BaseWrapper<KeyboardManager> {
     interface WrappedInterface {
         void free();

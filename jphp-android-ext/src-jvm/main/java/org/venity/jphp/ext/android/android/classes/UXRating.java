@@ -54,7 +54,7 @@ public class UXRating extends UXControl<Rating> {
     }
 
     @Reflection.Getter
-    public boolean setUpdateOnHover() {
+    public boolean getUpdateOnHover() {
         return getWrappedObject().isUpdateOnHover();
     }
 

@@ -2,13 +2,15 @@ package org.venity.jphp.ext.android.fx.classes.shape;
 
 import javafx.scene.shape.Ellipse;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Property;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name("php\\gui\\shape\\UXEllipse")
+@Name("UXEllipse")
+@Reflection.Namespace("php\\gui\\shape")
 public class UXEllipse extends UXShape<Ellipse> {
     interface WrappedInterface {
         @Property double radiusX();

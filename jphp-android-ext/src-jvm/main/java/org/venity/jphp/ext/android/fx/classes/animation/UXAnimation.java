@@ -15,7 +15,8 @@ import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
 @Abstract
-@Name(JavaFXExtension.NS + "animation\\UXAnimation")
+@Reflection.Namespace("php\\gui\\animation")
+@Name("UXAnimation")
 public class UXAnimation<T extends Animation> extends BaseWrapper<Animation> {
     interface WrappedInterface {
         @Property

@@ -3,11 +3,13 @@ package org.venity.jphp.ext.android.fx.classes.effect;
 import javafx.scene.effect.Bloom;
 import javafx.scene.effect.Effect;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "effect\\UXBloomEffect")
+@Name("UXBloomEffect")
+@Reflection.Namespace("php\\gui\\effect")
 public class UXBloomEffect extends UXEffect<Bloom> {
     interface WrappedInterface {
         @Property double threshold();

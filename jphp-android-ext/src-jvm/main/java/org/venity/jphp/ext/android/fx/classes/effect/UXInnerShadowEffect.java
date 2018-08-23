@@ -5,11 +5,13 @@ import javafx.scene.effect.Effect;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.paint.Color;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "effect\\UXInnerShadowEffect")
+@Name("UXInnerShadowEffect")
+@Reflection.Namespace("php\\gui\\effect")
 public class UXInnerShadowEffect extends UXEffect<InnerShadow> {
     interface WrappedInterface {
         @Property double radius();

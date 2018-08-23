@@ -14,7 +14,8 @@ import php.runtime.reflection.ClassEntity;
 
 import java.util.List;
 
-@Name(JavaFXExtension.NS + "event\\UXDragEvent")
+@Name("UXDragEvent")
+@Reflection.Namespace("php\\gui\\event")
 public class UXDragEvent extends UXEvent {
     interface WrappedInterface {
         @Property TransferMode acceptedTransferMode();

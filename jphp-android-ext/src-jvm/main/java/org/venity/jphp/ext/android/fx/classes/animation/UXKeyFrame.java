@@ -13,7 +13,8 @@ import php.runtime.invoke.Invoker;
 import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "animation\\UXKeyFrame")
+@Reflection.Name("UXKeyFrame")
+@Reflection.Namespace("php\\gui\\animation")
 public class UXKeyFrame extends BaseWrapper<KeyFrame> {
     interface WrappedInterface {
         @Property String name();

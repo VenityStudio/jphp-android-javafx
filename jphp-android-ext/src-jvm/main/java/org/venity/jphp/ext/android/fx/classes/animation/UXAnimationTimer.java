@@ -2,6 +2,7 @@ package org.venity.jphp.ext.android.fx.classes.animation;
 
 import javafx.animation.AnimationTimer;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
@@ -9,7 +10,8 @@ import php.runtime.invoke.Invoker;
 import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "animation\\UXAnimationTimer")
+@Name("UXAnimationTimer")
+@Reflection.Namespace("php\\gui\\animation")
 public class UXAnimationTimer extends BaseWrapper<AnimationTimer> {
     public static final float FRAME_INTERVAL = 1 / 60f;
     public static final float FRAME_INTERVAL_MS = FRAME_INTERVAL * 1000;

@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.shape.Polygon;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import org.venity.jphp.ext.android.fx.classes.UXList;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Property;
 import php.runtime.annotation.Reflection.Signature;
@@ -13,7 +14,8 @@ import php.runtime.reflection.ClassEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-@Name("php\\gui\\shape\\UXPolygon")
+@Name("UXPolygon")
+@Reflection.Namespace("php\\gui\\shape")
 public class UXPolygon extends UXShape<Polygon> {
     interface WrappedInterface {
         @Property UXList points();

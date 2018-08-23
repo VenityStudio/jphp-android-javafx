@@ -9,7 +9,8 @@ import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
 @Reflection.Abstract
-@Name(JavaFXExtension.NS + "event\\UXWebEvent")
+@Name("UXWebEvent")
+@Reflection.Namespace("php\\gui\\event")
 public class UXWebEvent extends UXEvent {
     interface WrappedInterface {
         @Property Object data();

@@ -6,7 +6,8 @@ import php.runtime.annotation.Reflection.*;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "effect\\UXReflectionEffect")
+@Name("UXReflectionEffect")
+@php.runtime.annotation.Reflection.Namespace("php\\gui\\effect")
 public class UXReflectionEffect extends UXEffect<Reflection> {
     interface WrappedInterface {
         @Property double topOffset();

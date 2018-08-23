@@ -3,6 +3,7 @@ package org.venity.jphp.ext.android.fx.classes.event;
 import javafx.scene.input.ScrollEvent;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
 import php.runtime.Memory;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Getter;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Property;
@@ -11,7 +12,8 @@ import php.runtime.env.Environment;
 import php.runtime.memory.ArrayMemory;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "event\\UXScrollEvent")
+@Name("UXScrollEvent")
+@Reflection.Namespace("php\\gui\\event")
 public class UXScrollEvent extends UXEvent {
     interface WrappedInterface {
         @Property double deltaX();

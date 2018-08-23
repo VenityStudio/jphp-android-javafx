@@ -3,13 +3,15 @@ package org.venity.jphp.ext.android.fx.classes.effect;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.GaussianBlur;
 import org.venity.jphp.ext.android.fx.JavaFXExtension;
+import php.runtime.annotation.Reflection;
 import php.runtime.annotation.Reflection.Name;
 import php.runtime.annotation.Reflection.Property;
 import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Name(JavaFXExtension.NS + "effect\\UXGaussianBlurEffect")
+@Name("UXGaussianBlurEffect")
+@Reflection.Namespace("php\\gui\\effect")
 public class UXGaussianBlurEffect extends UXEffect<GaussianBlur> {
     interface WrappedInterface {
         @Property double radius();

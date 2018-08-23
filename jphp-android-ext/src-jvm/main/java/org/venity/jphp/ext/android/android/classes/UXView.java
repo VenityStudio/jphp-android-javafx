@@ -1,10 +1,13 @@
 package org.venity.jphp.ext.android.android.classes;
 
+import com.gluonhq.charm.glisten.layout.Layer;
+import com.gluonhq.charm.glisten.layout.layer.FloatingActionButton;
 import com.gluonhq.charm.glisten.mvc.View;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.android.classes.support.PView;
+import org.venity.jphp.ext.android.fx.classes.UXList;
 import php.runtime.annotation.Reflection;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
@@ -37,7 +40,7 @@ public class UXView extends UXMobileLayoutPane {
     }
 
     @Reflection.Signature
-    public void onUpdateAppBar(Environment env, php.runtime.invoke.Invoker invoker){
+    public void setOnUpdateAppBar(Environment env, php.runtime.invoke.Invoker invoker){
         PView pv = (PView) getWrappedObject();
         pv.setOnAppBarUpdate(invoker, env);
     }
@@ -56,6 +59,11 @@ public class UXView extends UXMobileLayoutPane {
     @Reflection.Getter
     public String getName() {
         return getWrappedObject().getName();
+    }
+
+    @Reflection.Signature
+    public void addActionButton(FloatingActionButton fab) {
+        getWrappedObject().getLayers().add(fab.getLayer());
     }
 
     @Reflection.Setter

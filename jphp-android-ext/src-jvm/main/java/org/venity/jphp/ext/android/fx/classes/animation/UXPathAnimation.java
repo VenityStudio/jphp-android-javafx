@@ -14,7 +14,8 @@ import php.runtime.annotation.Reflection.Signature;
 import php.runtime.env.Environment;
 import php.runtime.reflection.ClassEntity;
 
-@Reflection.Name(JavaFXExtension.NS + "animation\\UXPathAnimation")
+@Reflection.Name("UXPathAnimation")
+@Reflection.Namespace("php\\gui\\animation")
 public class UXPathAnimation extends UXAnimation<PathTransition> {
     interface WrappedInterface {
         @Property

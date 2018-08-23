@@ -4,6 +4,7 @@ import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.StatusBar;
 import com.gluonhq.charm.glisten.control.*;
 import com.gluonhq.charm.glisten.layout.MobileLayoutPane;
+import com.gluonhq.charm.glisten.layout.layer.FloatingActionButton;
 import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
@@ -178,6 +179,7 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, LabelEx.class, UXLabelEx.class);
         registerWrapperClass(scope, Hyperlink.class, UXHyperlink.class);
         registerWrapperClass(scope, ComboBoxBase.class, UXComboBoxBase.class);
+        registerWrapperClass(scope, FloatingActionButton.class, UXFloatingActionButton.class);
         registerWrapperClass(scope, ComboBox.class, UXComboBox.class);
         registerWrapperClass(scope, ChoiceBox.class, UXChoiceBox.class);
         registerWrapperClass(scope, ColorPicker.class, UXColorPicker.class);
@@ -193,6 +195,8 @@ public class AndroidExtension extends Extension {
         MemoryOperation.registerWrapper(TabPaneEx.class, UXTabPane.class);
         registerWrapperClass(scope, ScrollPane.class, UXScrollPane.class);
         registerWrapperClass(scope, TitledPane.class, UXTitledPane.class);
+        registerWrapperClass(scope, BottomNavigation.class, UXBottomNavigation.class);
+        registerWrapperClass(scope, BottomNavigationButton.class, UXBottomNavigationButton.class);
         registerWrapperClass(scope, SplitPane.class, UXSplitPane.class);
         registerWrapperClass(scope, TreeItem.class, UXTreeItem.class);
         registerWrapperClass(scope, TreeView.class, UXTreeView.class);
