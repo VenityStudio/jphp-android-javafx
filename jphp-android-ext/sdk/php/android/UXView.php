@@ -22,4 +22,8 @@ class UXView
     public $name;
 
     public function addActionButton(UXFloatingActionButton $fab){}
+
+    public function onUpdateAppBar($param)
+    {
+    }
 }

@@ -7,7 +7,7 @@ use php\gui\UXNode;
 
 class UXMaterialIcons
 {
-    public function __construct()
+    public function __construct($icon_name)
     {
     }
 

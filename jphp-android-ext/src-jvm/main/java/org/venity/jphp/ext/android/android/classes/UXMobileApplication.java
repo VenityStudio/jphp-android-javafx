@@ -1,4 +1,4 @@
-sewpackage org.venity.jphp.ext.android.android.classes;
+package org.venity.jphp.ext.android.android.classes;
 
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.StatusBar;

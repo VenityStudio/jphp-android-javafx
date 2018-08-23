@@ -11,7 +11,7 @@ class UXSwatch
     {
     }
 
-    public function of(string $color)
+    public static function of($color) : UXSwatch
     {
 
     }
