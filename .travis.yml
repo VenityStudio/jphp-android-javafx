@@ -18,7 +18,7 @@ before_install:
 script:
     - jppm version
     - cd jphp-android-ext && jppm publish --yes && cd ..
-    - cd jppm-android-plugin && jppm publish --yes && cd ../sandbox
+    - cd jppm-android-plugin && jppm publish --yes && cd ../Demo
     - jppm update
     - jppm tasks
     - jppm android:apk
