@@ -6,8 +6,11 @@ import javafx.scene.Node;
 import javafx.scene.control.ButtonBase;
 import org.venity.jphp.ext.android.AndroidExtension;
 import org.venity.jphp.ext.android.fx.classes.UXList;
+import org.venity.jphp.ext.android.fx.classes.event.UXEvent;
+import php.runtime.Memory;
 import php.runtime.annotation.Reflection;
 import php.runtime.env.Environment;
+import php.runtime.invoke.Invoker;
 import php.runtime.lang.BaseWrapper;
 import php.runtime.reflection.ClassEntity;
 
@@ -78,6 +81,18 @@ public class UXAndroidDialog extends BaseWrapper<Dialog>{
     @Reflection.Setter
     public void setContent(Node N){
         getWrappedObject().setContent(N);
+    }
+
+
+    @Reflection.Setter
+    public void setOnHide(Invoker i){
+        getWrappedObject().setOnHiding((e) -> {
+            try {
+                i.call(null);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
+        });
     }
 
     @Reflection.Getter

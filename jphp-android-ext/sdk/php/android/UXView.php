@@ -3,7 +3,7 @@
 namespace php\android;
 
 
-class UXView
+class UXView extends UXMobileLayoutPane
 {
     public function __construct($name = "home")
     {
@@ -23,7 +23,4 @@ class UXView
 
     public function addActionButton(UXFloatingActionButton $fab){}
 
-    public function onUpdateAppBar($param)
-    {
-    }
 }

@@ -22,7 +22,8 @@ public class UXMaterialIcons extends BaseWrapper<MaterialDesignIcon>{
 
     @Reflection.Signature
     public void __construct(String icon){
-        __wrappedObject = MaterialDesignIcon.valueOf(icon);
+
+        __wrappedObject = MaterialDesignIcon.valueOf(icon.toUpperCase());
     }
 
     @Reflection.Signature

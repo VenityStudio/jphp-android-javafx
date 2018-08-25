@@ -17,6 +17,7 @@ class UXNavigationDrawer
      */
     public $footer;
 
+
     /**
      * @var UXNode
      */

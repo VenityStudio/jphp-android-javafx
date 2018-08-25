@@ -63,6 +63,10 @@ class UXAndroidDialog
      * @var UXNode
      */
     public $content;
+    /*
+     * @var callable
+     */
+    public $onHide;
 
     /*
      * @var UXNode

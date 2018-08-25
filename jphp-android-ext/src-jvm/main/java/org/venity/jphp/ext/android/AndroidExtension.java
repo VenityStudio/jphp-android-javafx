@@ -133,6 +133,7 @@ public class AndroidExtension extends Extension {
         registerWrapperClass(scope, MenuItem.class, UXMenuItem.class);
         registerWrapperClass(scope, Menu.class, UXMenu.class);
         registerWrapperClass(scope, Scene.class, UXScene.class);
+        registerWrapperClass(scope, ExceptionDialog.class, UXExceptionDialog.class);
 
         registerWrapperClass(scope, View.class, UXView.class);
 

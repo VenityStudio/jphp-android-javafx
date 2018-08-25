@@ -9,3 +9,8 @@
 /package-lock.php.yml
 
 **/*.iml
+**/*.cmd
+**/.idea/**
+.idea/**
+**/.idea 
+.idea

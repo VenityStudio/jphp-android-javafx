@@ -1,4 +1,4 @@
-name: sandbox
+name: Demo
 version: 1.0.0
 deps:
   jphp-android-ext: '*'
