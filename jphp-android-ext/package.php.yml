@@ -1,8 +1,10 @@
 name: 'jphp-android-ext'
-version: '1.0.0'
+version: '0.1.0'
 
 plugins:
   - 'Gradle'
+  - 'Doc'
+  - 'Hub'
 
 gradle:
   repos:
@@ -14,3 +16,12 @@ gradle:
 deps:
   jphp-runtime: '*'
   jphp-xml-ext: '*'
+
+hub:
+  login: "yousan4ik@gmail.com"
+
+doc:
+  url-prefix: https://github.com/VenityStudio/android/tree/master/jphp-android-ext/api-docs/
+  langs:
+    en: English
+    ru: Русский
