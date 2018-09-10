@@ -20,6 +20,20 @@ deps:
 hub:
   login: "yousan4ik@gmail.com"
 
+config:
+  ignore:
+    - /sandbox/**
+    - /.idea/**
+    - /.gradle/**
+    - /*.iml
+    - /.git/**
+    - /examples/**
+    - /gradle/**
+    - /jars/**
+    - /build/**
+    - /package.hub.yml
+
+
 doc:
   url-prefix: https://github.com/VenityStudio/android/tree/master/jphp-android-ext/api-docs/
   langs:

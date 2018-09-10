@@ -9,5 +9,6 @@
 /gradlew
 /gradlew.bat
 /package-lock.php.yml
+/package.hub.yml
 
 **/*.iml
