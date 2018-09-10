@@ -46,20 +46,41 @@ class AndroidPlugin
     {
         Console::log('-> generate build.gradle file ...');
 
-	    $buildScript  = "buildscript {\n";
-	    $buildScript .= "repositories {\n\r\rjcenter()\n}\n";
-	    $buildScript .= "dependencies {\n\rclasspath 'org.javafxports:jfxmobile-plugin:1.3.10'\n}\n";
-	    $buildScript .= "}\n\n";
-	    $buildScript .= "apply plugin: 'org.javafxports.jfxmobile'";
-	    $buildScript .= "repositories {\n\rmaven {\n";
-	    $buildScript .= "\rname 'gulon'\n\r\rurl \"http://nexus.gluonhq.com/nexus/content/repositories/releases/\"\n}";
-	    $buildScript .= "\rmavenLocal()\n\rjcenter()\n}\n";
-	    $buildScript .= "dependencies {\n   androidRuntime 'com.gluonhq:charm-down-core-android:3.5.0'\n";
-	    $buildScript .= "\rcompile files('build/{$file}')\n}\n";
-	    $buildScript .= "jfxmobile {\n  javafxportsVersion = '8.60.9'\n}\n";
-	    $buildScript .= "\rdownConfig {\n\r\rversion = '3.8.0'\n\r\rplugins 'display', 'lifecycle', 'statusbar', 'storage'\n}\n";
-	    $buildScript .= "\randroid {\n\r\rcompileSdkVersion  = {$androidData['sdk']}\n\r\rbuildToolsVersion  = '{$androidData['sdk-tools']}'\n\r\rapplicationPackage = '{$androidData['package-name']}'\n }\n\n";
-	    $buildScript .= "mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"\n";
+	$buildScript = "buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.javafxports:jfxmobile-plugin:1.3.10'
+    }
+}
+apply plugin: 'org.javafxports.jfxmobile'
+repositories {
+    maven {
+        name 'gulon'
+        url \"http://nexus.gluonhq.com/nexus/content/repositories/releases/\" // gluon repository
+    }
+    mavenLocal()
+    jcenter()
+  
+}
+dependencies {
+    androidRuntime 'com.gluonhq:charm-down-core-android:3.5.0'
+    compile files('build/{$file}')
+}
+jfxmobile {
+    javafxportsVersion = '8.60.9'
+    downConfig {
+        version = '3.8.0'
+        plugins 'display', 'lifecycle', 'statusbar', 'storage'
+    }
+    android {
+        compileSdkVersion  = {$androidData['sdk']}
+        buildToolsVersion  = '{$androidData['sdk-tools']}'
+        applicationPackage = '{$androidData['package-name']}'
+    }
+}
+mainClassName = \"org.venity.jphp.ext.android.UXAndroidApplication\"";
 
 	    if (fs::isFile("./build.coustom.gradle"))
 	        $buildScript .= Stream::getContents("./build.coustom.gradle");
