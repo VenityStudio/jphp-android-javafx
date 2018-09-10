@@ -5,7 +5,7 @@ type: plugin
 
 plugin:
   list:
-    - AndroidPlugin
+    - Android
   sources:
     - src
 config:
