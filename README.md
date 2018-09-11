@@ -9,7 +9,7 @@ And run this script
 
 ```bash
 cd jphp-android-ext && jppm publish --yes && cd ..
-cd jppm-android-plugin && jppm publish --yes && cd ../sandbox
+cd jppm-android-plugin && jppm publish --yes && cd ../Demo
 jppm update
 jppm android:apk
 ```
